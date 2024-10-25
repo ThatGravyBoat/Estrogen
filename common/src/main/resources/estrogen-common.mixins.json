@@ -17,6 +17,7 @@
     "client.ReceivingLevelScreenMixin",
     "client.TextRendererMixin"
   ],
+  "plugin": "dev.mayaqq.estrogen.utils.EstrogenMixinPlugin",
   "injectors": {
     "defaultRequire": 1
   }
