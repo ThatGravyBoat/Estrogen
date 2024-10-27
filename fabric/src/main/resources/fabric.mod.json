@@ -39,7 +39,6 @@
     ]
   },
   "mixins": [
-    "estrogen.mixins.json",
     "estrogen-common.mixins.json"
   ],
   "depends": {
@@ -65,6 +64,12 @@
         "modmenu.modrinth": "https://modrinth.com/mod/estrogen",
         "modmenu.wiki": "https://github.com/MayaqqDev/Estrogen/wiki"
       }
-    }
+    },
+    "resourcefullib:resourcepack": [
+      {
+        "name": "estrogenprogrammerart",
+        "description": "Estrogen Programmer Art"
+      }
+    ]
   }
 }
