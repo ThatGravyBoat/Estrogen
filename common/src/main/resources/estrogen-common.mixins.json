@@ -16,6 +16,7 @@
     "client.PlayerEntityModelMixin",
     "client.PlayerEntityRendererMixin",
     "client.ReceivingLevelScreenMixin",
+    "client.SplashManagerMixin",
     "client.TextRendererMixin"
   ],
   "plugin": "dev.mayaqq.estrogen.utils.EstrogenMixinPlugin",

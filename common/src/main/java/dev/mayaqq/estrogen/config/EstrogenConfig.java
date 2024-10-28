@@ -98,6 +98,7 @@ public class EstrogenConfig {
         public final ConfigBool estrogenButtonEnabled = b(true, "enabled", "Enable the estrogen button in the create screen");
         public final ConfigInt estrogenButtonXOffset = i(-23, "xOffset", "x offset the estrogen button in the create screen", "Offset is calculated off of the center of the Configure Button");
         public final ConfigInt estrogenButtonYOffset = i(0, "yOffset", "y offset the estrogen button in the create screen", "Offset is calculated off of the center of the Configure Button");
+        public final ConfigBool estrogenSplashes = b(true, "estrogenSplashes", "Custom Splashes on the main menu! Requires resource reload");
 
         // Misc Config Group
         public final ConfigGroup misc = group(1, "misc", "Miscellaneous settings");

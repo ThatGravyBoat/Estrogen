@@ -6,6 +6,7 @@ import dev.mayaqq.estrogen.client.registry.EstrogenRenderer;
 import dev.mayaqq.estrogen.client.registry.EstrogenShaders;
 import dev.mayaqq.estrogen.fabric.client.models.EstrogenModelLoadingPlugin;
 import dev.mayaqq.estrogen.resources.BreastArmorDataLoader;
+import dev.mayaqq.estrogen.resources.EstrogenSplashLoader;
 import io.github.fabricators_of_create.porting_lib.event.client.EntityAddedLayerCallback;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.model.loading.v1.PreparableModelLoadingPlugin;
@@ -29,7 +30,8 @@ public class EstrogenClientFabric implements ClientModInitializer {
         CoreShaderRegistrationCallback.EVENT.register(context -> EstrogenShaders.register(context::register));
         EntityAddedLayerCallback.EVENT.register((renderers, skinMap) -> EstrogenRenderer.registerEntityLayers(skinMap::get));
 
-        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(new Listener());
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(new BreastListener());
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(new SplashListener());
 
         // This is needed to automatically load all models in models/thigh_high_styles
         // Pretty fabric way using model loading plugin api
@@ -37,7 +39,7 @@ public class EstrogenClientFabric implements ClientModInitializer {
     }
 
 
-    private static class Listener implements IdentifiableResourceReloadListener {
+    private static class BreastListener implements IdentifiableResourceReloadListener {
 
         @Override
         public ResourceLocation getFabricId() {
@@ -47,6 +49,19 @@ public class EstrogenClientFabric implements ClientModInitializer {
         @Override
         public CompletableFuture<Void> reload(PreparationBarrier preparationBarrier, ResourceManager resourceManager, ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler, Executor backgroundExecutor, Executor gameExecutor) {
             return BreastArmorDataLoader.INSTANCE.reload(preparationBarrier, resourceManager, preparationsProfiler, reloadProfiler, backgroundExecutor, gameExecutor);
+        }
+    }
+
+    private static class SplashListener implements IdentifiableResourceReloadListener {
+
+        @Override
+        public ResourceLocation getFabricId() {
+            return Estrogen.id("splashes");
+        }
+
+        @Override
+        public CompletableFuture<Void> reload(PreparationBarrier preparationBarrier, ResourceManager resourceManager, ProfilerFiller preparationsProfiler, ProfilerFiller reloadProfiler, Executor backgroundExecutor, Executor gameExecutor) {
+            return EstrogenSplashLoader.INSTANCE.reload(preparationBarrier, resourceManager, preparationsProfiler, reloadProfiler, backgroundExecutor, gameExecutor);
         }
     }
 }

@@ -5,6 +5,7 @@ import dev.mayaqq.estrogen.client.EstrogenClient;
 import dev.mayaqq.estrogen.client.config.EstrogenConfigScreen;
 import dev.mayaqq.estrogen.client.registry.EstrogenShaders;
 import dev.mayaqq.estrogen.resources.BreastArmorDataLoader;
+import dev.mayaqq.estrogen.resources.EstrogenSplashLoader;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.ConfigScreenHandler;
@@ -31,6 +32,7 @@ public class EstrogenForgeClient {
     @SubscribeEvent
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event) {
         event.registerReloadListener(BreastArmorDataLoader.INSTANCE);
+        event.registerReloadListener(EstrogenSplashLoader.INSTANCE);
     }
 
     @SubscribeEvent
