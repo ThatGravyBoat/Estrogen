@@ -1,26 +1,27 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "dev.mayaqq.estrogen.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "BottleItemMixin",
-    "PlayerEntityMixin",
-    "ServerPlayerMixin"
-  ],
-  "client": [
-    "client.ClientPacketListenerMixin",
-    "client.ClientPlayNetworkHandlerMixin",
-    "client.GameOptionsMixin",
-    "client.MinecraftClientMixin",
-    "client.PlayerEntityModelMixin",
-    "client.PlayerEntityRendererMixin",
-    "client.ReceivingLevelScreenMixin",
-    "client.SplashManagerMixin",
-    "client.TextRendererMixin"
-  ],
-  "plugin": "dev.mayaqq.estrogen.utils.EstrogenMixinPlugin",
-  "injectors": {
-    "defaultRequire": 1
-  }
+    "required": true,
+    "minVersion": "0.8",
+    "package": "dev.mayaqq.estrogen.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [
+        "BottleItemMixin",
+        "PlayerEntityMixin",
+        "ServerPlayerMixin"
+    ],
+    "client": [
+        "client.ClientPacketListenerMixin",
+        "client.ClientPlayNetworkHandlerMixin",
+        "client.GameOptionsMixin",
+        "client.MinecraftClientMixin",
+        "client.PlayerEntityModelMixin",
+        "client.PlayerEntityRendererMixin",
+        "client.ReceivingLevelScreenMixin",
+        "client.SplashManagerMixin",
+        "client.SplashRendererAccessor",
+        "client.TextRendererMixin"
+    ],
+    "plugin": "dev.mayaqq.estrogen.utils.EstrogenMixinPlugin",
+    "injectors": {
+        "defaultRequire": 1
+    }
 }

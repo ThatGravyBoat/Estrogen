@@ -18,9 +18,10 @@
     "Also try Celeste!",
     "Breaking eggs since 2023!",
     "Also try HRT",
-    "Now with %P% less Dysphoria!",
+    "Now with %percent% less Dysphoria!",
     "You aren't faking it",
     "Don't use Duct Tape for that!",
-    ">:3"
+    ">:3",
+    { "text": "\uE000", "color": "white", "font": "estrogen:flags" }
   ]
 }

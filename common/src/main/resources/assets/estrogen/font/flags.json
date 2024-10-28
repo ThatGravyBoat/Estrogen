@@ -1,0 +1,12 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "estrogen:font/flags.png",
+            "ascent": 8,
+            "chars": [
+                "\uE000"
+            ]
+        }
+    ]
+}
