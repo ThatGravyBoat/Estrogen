@@ -6,6 +6,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.simibubi.create.content.equipment.armor.BaseArmorItem;
 import com.teamresourceful.resourcefullib.common.utils.modinfo.ModInfoUtils;
+import dev.mayaqq.estrogen.Estrogen;
 import dev.mayaqq.estrogen.client.entity.player.features.boobs.BoobArmorRenderer;
 import dev.mayaqq.estrogen.client.entity.player.features.boobs.PlayerEntityModelExtension;
 import dev.mayaqq.estrogen.client.entity.player.features.boobs.TextureData;
@@ -89,7 +90,9 @@ public class PlayerEntityModelMixin<T extends LivingEntity> extends HumanoidMode
     @Inject(method = "<init>", at = @At("RETURN"))
     private void estrogen$init(ModelPart root, boolean thinArms, CallbackInfo ci) {
         if (root.hasChild("boobs")) estrogen$boobs = root.getChild("boobs");
+        else Estrogen.LOGGER.warn("An error occured while trying to get the Estrogen Chest.");
         if (root.hasChild("boobs_jacket")) estrogen$boobJacket = root.getChild("boobs_jacket");
+        else Estrogen.LOGGER.warn("An error occured while trying to get the Estrogen Chest Jacket.");
         estrogen$boobArmor = new BoobArmorRenderer();
         estrogen$boobArmorTrim = new BoobArmorRenderer();
     }
@@ -186,8 +189,8 @@ public class PlayerEntityModelMixin<T extends LivingEntity> extends HumanoidMode
 
     @Inject(method = "setAllVisible", at = @At("RETURN"))
     private void estrogen$setVisible(boolean visible, CallbackInfo ci) {
-        this.estrogen$boobs.visible = visible;
-        this.estrogen$boobJacket.visible = visible;
-        this.estrogen$boobArmor.visible = visible;
+        if (this.estrogen$boobs != null)this.estrogen$boobs.visible = visible;
+        if (this.estrogen$boobJacket != null) this.estrogen$boobJacket.visible = visible;
+        if (this.estrogen$boobArmor != null) this.estrogen$boobArmor.visible = visible;
     }
 }
