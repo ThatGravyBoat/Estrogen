@@ -54,6 +54,7 @@ public class EstrogenTranslations extends FabricLanguageProvider {
         tb.add(EstrogenFluids.MOLTEN_SLIME.getBucket(), "Bucket of Molten Slime");
         tb.add(EstrogenFluids.MOLTEN_AMETHYST.getBucket(), "Bucket of Molten Amethyst");
         tb.add(EstrogenFluids.TESTOSTERONE_MIXTURE.getBucket(), "Bucket of Testosterone Mixture");
+        tb.add(EstrogenFluids.GENDER_FLUID.getBucket(), "Bucket of Gender Fluid");
 
         // Entities
         tb.add(EstrogenEntities.MOTH.get(), "Rosy Maple Moth");
@@ -120,6 +121,7 @@ public class EstrogenTranslations extends FabricLanguageProvider {
         tb.add(EstrogenFluids.MOLTEN_SLIME.getBlock(), "Molten Slime");
         tb.add(EstrogenFluids.MOLTEN_AMETHYST.getBlock(), "Molten Amethyst");
         tb.add(EstrogenFluids.TESTOSTERONE_MIXTURE.getBlock(), "Testosterone Mixture");
+        tb.add(EstrogenFluids.GENDER_FLUID.getBlock(), "Gender Fluid");
 
         // Fluids
         tb.add("fluid_type.estrogen.liquid_estrogen", "Liquid Estrogen");
@@ -128,12 +130,14 @@ public class EstrogenTranslations extends FabricLanguageProvider {
         tb.add("fluid_type.estrogen.molten_slime", "Molten Slime");
         tb.add("fluid_type.estrogen.molten_amethyst", "Molten Amethyst");
         tb.add("fluid_type.estrogen.testosterone_mixture", "Testosterone Mixture");
+        tb.add("fluid_type.estrogen.gender_fluid", "Gender Fluid");
         tb.add("fluid.estrogen.liquid_estrogen", "Liquid Estrogen");
         tb.add("fluid.estrogen.horse_urine", "Horse Urine");
         tb.add("fluid.estrogen.filtrated_horse_urine", "Filtrated Horse Urine");
         tb.add("fluid.estrogen.molten_slime", "Molten Slime");
         tb.add("fluid.estrogen.molten_amethyst", "Molten Amethyst");
         tb.add("fluid.estrogen.testosterone_mixture", "Testosterone Mixture");
+        tb.add("fluid.estrogen.gender_fluid", "Gender Fluid");
 
         // Sounds
         tb.add("subtitles.estrogen.dash", "Girl Power Dash");

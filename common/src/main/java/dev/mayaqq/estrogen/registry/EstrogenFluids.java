@@ -81,10 +81,29 @@ public class EstrogenFluids {
             .register();
 
     public static final EstrogenFluidEntry<BotariumSourceFluid, BotariumFlowingFluid> GENDER_FLUID =
-        FLUIDS.entry("gender_fluid", BotariumSourceFluid::new, BotariumFlowingFluid::new)
-            .transform(Transgenders.waterLikeFluid(MapColor.COLOR_CYAN, EstrogenColors.FILTRATED_HORSE_URINE.value))
-            .transform(Transgenders.simpleBucket())
-            .register();
-
-
+            FLUIDS.entry("gender_fluid", BotariumSourceFluid::new, BotariumFlowingFluid::new)
+                    .properties(p -> p
+                            .still(Estrogen.id("block/gender_fluid/gender_fluid_still"))
+                            .flowing(Estrogen.id("block/gender_fluid/gender_fluid_flow"))
+                            .overlay(Estrogen.id("block/gender_fluid/gender_fluid_flow"))
+                            .screenOverlay(new ResourceLocation("textures/misc/underwater.png"))
+                            .canConvertToSource(false)
+                            .canDrown(true)
+                            .canExtinguish(true)
+                            .canHydrate(true)
+                            .canPushEntity(true)
+                            .canSwim(true)
+                            .viscosity(1500)
+                            .density(1500))
+                    .renderType(() -> RenderType::translucent)
+                    .block(EstrogenLiquidBlock::new)
+                    .copyProperties(() -> Blocks.WATER)
+                    .properties(p -> p.mapColor(MapColor.COLOR_CYAN))
+                    .build()
+                    .bucket(FluidBucketItem::new)
+                    .properties(p -> p.craftRemainder(Items.BUCKET)
+                            .stacksTo(1)
+                            .rarity(Rarity.RARE))
+                    .build()
+                    .register();
 }

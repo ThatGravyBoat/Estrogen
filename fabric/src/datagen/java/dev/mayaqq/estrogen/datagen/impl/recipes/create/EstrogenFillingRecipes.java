@@ -48,6 +48,11 @@ public class EstrogenFillingRecipes extends BaseRecipeProvider {
                 .output(EstrogenCreativeTab.tippedArrow(EstrogenPotions.ESTROGEN_POTION.get()))
         );
 
+        create(id("gender_change_potion"), builder -> builder
+                .require(Items.GLASS_BOTTLE)
+                .require(EstrogenFluids.GENDER_FLUID.get(), getAmount(27000))
+                .output(EstrogenItems.GENDER_CHANGE_POTION));
+
         createMulti(id("blahaj"), builder -> builder
                         .require(Items.LIGHT_BLUE_WOOL)
                         .require(EstrogenFluids.LIQUID_ESTROGEN.get(), getAmount(81))

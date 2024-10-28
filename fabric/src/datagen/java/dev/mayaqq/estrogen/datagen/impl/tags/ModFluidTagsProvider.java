@@ -35,7 +35,9 @@ public class ModFluidTagsProvider extends BaseTagProvider.FluidProvider {
                     .add(EstrogenFluids.HORSE_URINE.getFlowing())
                     .add(EstrogenFluids.FILTRATED_HORSE_URINE.getFlowing())
                     .add(EstrogenFluids.TESTOSTERONE_MIXTURE.get())
-                    .add(EstrogenFluids.TESTOSTERONE_MIXTURE.getFlowing());
+                    .add(EstrogenFluids.TESTOSTERONE_MIXTURE.getFlowing())
+                    .add(EstrogenFluids.GENDER_FLUID.get())
+                    .add(EstrogenFluids.GENDER_FLUID.getFlowing());
             getOrCreateTagBuilder(EstrogenTags.Fluids.LAVA)
                     .add(EstrogenFluids.MOLTEN_SLIME.get())
                     .add(EstrogenFluids.MOLTEN_SLIME.getFlowing())

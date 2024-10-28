@@ -58,6 +58,7 @@ public class EstrogenCreativeTab {
         output.accept(FILTRATED_HORSE_URINE.getBucket());
         output.accept(HORSE_URINE.getBucket());
         output.accept(MOLTEN_AMETHYST.getBucket());
+        output.accept(GENDER_FLUID.getBucket());
         output.accept(MOTH.getSpawnEgg());
         THIGH_HIGHS.get().streamStyleItems().forEach(output::accept);
     }
