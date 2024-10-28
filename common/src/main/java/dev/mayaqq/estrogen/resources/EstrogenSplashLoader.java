@@ -9,6 +9,7 @@ import net.minecraft.util.profiling.ProfilerFiller;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Random;
 
 public class EstrogenSplashLoader extends SimpleJsonResourceReloadListener {
 
@@ -26,7 +27,9 @@ public class EstrogenSplashLoader extends SimpleJsonResourceReloadListener {
         object.forEach((key, value) -> {
             if (key.getNamespace().equals("estrogen") && key.getPath().equals("splashes")) {
                 value.getAsJsonObject().getAsJsonArray("splashes").forEach(element -> {
-                    this.splashes.add(element.getAsString());
+                    String s = element.getAsString()
+                            .replaceAll("%P%", new Random().nextInt(101) + "%");
+                    this.splashes.add(s);
                 });
             }
         });
