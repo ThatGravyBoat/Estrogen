@@ -2,6 +2,7 @@ package dev.mayaqq.estrogen;
 
 import dev.mayaqq.estrogen.networking.EstrogenNetworkManager;
 import dev.mayaqq.estrogen.registry.*;
+import earth.terrarium.botarium.util.CommonHooks;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,13 @@ public class Estrogen {
     }
 
     public static void init() {
+        if (CommonHooks.isModLoaded("minecraftcapes")) {
+            LOGGER.error("----------------------------------------------------------------------------");
+            LOGGER.error("Minecraft Capes is detected! This mod currently causes some features");
+            LOGGER.error("of Estrogen to not work properly, before making an issue, please make sure");
+            LOGGER.error("to first update and disable Minecraft Capes and see if the issue persists.");
+            LOGGER.error("----------------------------------------------------------------------------");
+        }
         // Init all the different classes
         EstrogenAttributes.init();
         EstrogenDataSerializers.DATA_SERIALIZERS.init();

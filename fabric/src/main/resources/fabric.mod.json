@@ -48,11 +48,14 @@
     "create": ">=0.5.1-f-build.1224",
     "trinkets": "*",
     "botarium": "*",
-    "resourcefullib": ">=2.1.28"
+    "resourcefullib": ">=2.1.29"
   },
   "suggests": {
     "emi": "*",
     "modmenu": "*"
+  },
+  "conflicts": {
+    "minecraftcapes": "<=12.3.7"
   },
   "custom": {
     "modmenu": {
