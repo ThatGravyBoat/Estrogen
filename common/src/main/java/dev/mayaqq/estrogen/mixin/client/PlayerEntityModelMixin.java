@@ -88,8 +88,8 @@ public class PlayerEntityModelMixin<T extends LivingEntity> extends HumanoidMode
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void estrogen$init(ModelPart root, boolean thinArms, CallbackInfo ci) {
-        if (root.getChild("boobs") != null) estrogen$boobs = root.getChild("boobs");
-        if (root.getChild("boobs_jacket") != null) estrogen$boobJacket = root.getChild("boobs_jacket");
+        if (root.hasChild("boobs")) estrogen$boobs = root.getChild("boobs");
+        if (root.hasChild("boobs_jacket")) estrogen$boobJacket = root.getChild("boobs_jacket");
         estrogen$boobArmor = new BoobArmorRenderer();
         estrogen$boobArmorTrim = new BoobArmorRenderer();
     }
