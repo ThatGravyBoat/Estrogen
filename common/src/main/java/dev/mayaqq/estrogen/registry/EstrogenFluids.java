@@ -3,6 +3,7 @@ package dev.mayaqq.estrogen.registry;
 import dev.mayaqq.estrogen.Estrogen;
 import dev.mayaqq.estrogen.registry.blocks.fluids.EstrogenLiquidBlock;
 import dev.mayaqq.estrogen.utils.EstrogenColors;
+import dev.mayaqq.estrogen.utils.StatePredicates;
 import dev.mayaqq.estrogen.utils.registry.EstrogenFluidEntry;
 import dev.mayaqq.estrogen.utils.registry.EstrogenFluidRegistrar;
 import earth.terrarium.botarium.common.registry.fluid.BotariumFlowingFluid;
@@ -98,12 +99,13 @@ public class EstrogenFluids {
                     .renderType(() -> RenderType::translucent)
                     .block(EstrogenLiquidBlock::new)
                     .copyProperties(() -> Blocks.WATER)
-                    .properties(p -> p.mapColor(MapColor.COLOR_CYAN))
+                    .properties(p -> p.mapColor(MapColor.COLOR_PINK)
+                            .emissiveRendering(StatePredicates::always))
                     .build()
                     .bucket(FluidBucketItem::new)
                     .properties(p -> p.craftRemainder(Items.BUCKET)
                             .stacksTo(1)
-                            .rarity(Rarity.RARE))
+                            .rarity(Rarity.EPIC))
                     .build()
                     .register();
 }
