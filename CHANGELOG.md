@@ -22,7 +22,7 @@
 ### Submitted texture credits from my discord:
 - lopyluna: thigh high textures for the model
 - Retro_Biz: Moth wool, bed, fuzz & things
-- Firebert Thigh High Item textures
+- Foxface Thigh High Item textures
 - Rennen_Rig.gsh: Unused thigh high item textures
 - Peglin: Moth Elytra item + model, gender change potion, unused moth fuzz textures, Gender Fluid
 - Me :333333333
